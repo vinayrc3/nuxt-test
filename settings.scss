@@ -1,0 +1,8 @@
+@use '@/assets/styles/_variables.scss' as *;
+
+$body-font-family: $font-stack;
+$font-size-root: 16px;
+
+// Optional: use your color variables to override Vuetify ones
+$vuetify-theme-primary: $primary;
+$vuetify-theme-secondary: $secondary;
