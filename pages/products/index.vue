@@ -9,7 +9,8 @@
 </template>
 
 <script setup>
-    const { data: products } = await useFetch('https://fakestoreapi.com/products');
+    const config = useRuntimeConfig();
+    const { data: products } = await useFetch(`${config.public.apiBase}/products`);
 </script>
 
 <style lang="css" scoped>

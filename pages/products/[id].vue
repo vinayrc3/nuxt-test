@@ -17,13 +17,14 @@
 
 <script setup>
 import { useMediaQuery } from '@vueuse/core';
+const config = useRuntimeConfig()
 
 
     const isMobile = useMediaQuery('(min-width: 768px)');
     const route = useRoute();
     const { id } = route.params;
 
-    const { data: product } = await useFetch(`https://fakestoreapi.com/products/${id}`);
+    const { data: product } = await useFetch(`${config.public.apiBase}/products/${id}`);
 
     if (!product.value) {
         throw createError({ statusCode: 404, statusMessage: 'Product not found!', fatal: true })
